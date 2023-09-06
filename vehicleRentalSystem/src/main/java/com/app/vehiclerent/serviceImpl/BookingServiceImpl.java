@@ -1,9 +1,13 @@
 package com.app.vehiclerent.serviceImpl;
 
+<<<<<<< HEAD
 import java.time.LocalDateTime;
 import java.time.ZoneId;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
+=======
+import java.util.List;
+>>>>>>> 1197bcd9c895547d26728c1001566b5b1e6eaa5a
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -12,8 +16,11 @@ import com.app.vehiclerent.entity.Booking;
 import com.app.vehiclerent.repository.BookingRepository;
 import com.app.vehiclerent.service.BookingService;
 
+<<<<<<< HEAD
 import jakarta.transaction.Transactional;
 
+=======
+>>>>>>> 1197bcd9c895547d26728c1001566b5b1e6eaa5a
 @Service
 public class BookingServiceImpl implements BookingService {
 
@@ -48,6 +55,7 @@ public class BookingServiceImpl implements BookingService {
     public void deleteBooking(Long id) {
         bookingRepository.deleteById(id);
     }
+<<<<<<< HEAD
     
     @Override
     public List<Booking> getBookingsByCustomerId(Long customerId) {
@@ -75,4 +83,6 @@ public class BookingServiceImpl implements BookingService {
         return totalAmount;
     }
     
+=======
+>>>>>>> 1197bcd9c895547d26728c1001566b5b1e6eaa5a
 }

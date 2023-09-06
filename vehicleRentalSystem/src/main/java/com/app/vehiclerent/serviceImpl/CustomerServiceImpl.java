@@ -43,6 +43,7 @@ public class CustomerServiceImpl implements CustomerService {
     public void deleteCustomer(Long id) {
         customerRepository.deleteById(id);
     }
+<<<<<<< HEAD
     
     @Override
 	public Customer authenticate(String email, String password) {
@@ -61,4 +62,6 @@ public class CustomerServiceImpl implements CustomerService {
 	public List<Customer> findByRole(String role) {
 		return customerRepository.findByRole(role);
 	}
+=======
+>>>>>>> 1197bcd9c895547d26728c1001566b5b1e6eaa5a
 }

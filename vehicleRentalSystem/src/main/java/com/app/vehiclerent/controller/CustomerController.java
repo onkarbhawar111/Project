@@ -3,8 +3,11 @@ package com.app.vehiclerent.controller;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+<<<<<<< HEAD
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.CrossOrigin;
+=======
+>>>>>>> 1197bcd9c895547d26728c1001566b5b1e6eaa5a
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -15,20 +18,29 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.app.vehiclerent.entity.Customer;
+<<<<<<< HEAD
 import com.app.vehiclerent.repository.CustomerRepository;
 import com.app.vehiclerent.service.CustomerService;
 
 @RestController
 @CrossOrigin
+=======
+import com.app.vehiclerent.service.CustomerService;
+
+@RestController
+>>>>>>> 1197bcd9c895547d26728c1001566b5b1e6eaa5a
 @RequestMapping("/customers")
 public class CustomerController {
     
     @Autowired
     private CustomerService customerService;
     
+<<<<<<< HEAD
     @Autowired
     private CustomerRepository customerRepo;
     
+=======
+>>>>>>> 1197bcd9c895547d26728c1001566b5b1e6eaa5a
     @GetMapping
     public List<Customer> getAllCustomers() {
         return customerService.getAllCustomers();
@@ -44,6 +56,7 @@ public class CustomerController {
         return customerService.createCustomer(customer);
     }
     
+<<<<<<< HEAD
     @PutMapping("/{customerId}")
     public ResponseEntity<Customer> updateCustomer(@PathVariable Long customerId, @RequestBody Customer updatedCustomer) {
         Customer existingCustomer = customerRepo.findById(customerId).orElseThrow();
@@ -83,6 +96,11 @@ public class CustomerController {
         Customer savedCustomer = customerRepo.save(existingCustomer);
         return ResponseEntity.ok(savedCustomer);
 
+=======
+    @PutMapping("/{id}")
+    public Customer updateCustomer(@PathVariable Long id, @RequestBody Customer customer) {
+        return customerService.updateCustomer(id, customer);
+>>>>>>> 1197bcd9c895547d26728c1001566b5b1e6eaa5a
     }
     
     @DeleteMapping("/{id}")

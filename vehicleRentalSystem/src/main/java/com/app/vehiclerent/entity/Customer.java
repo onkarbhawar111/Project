@@ -3,6 +3,7 @@ package com.app.vehiclerent.entity;
 import java.time.LocalDate;
 import java.util.List;
 
+<<<<<<< HEAD
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
 import jakarta.persistence.CascadeType;
@@ -13,6 +14,9 @@ import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.OneToMany;
 import jakarta.persistence.Table;
+=======
+import jakarta.persistence.*;
+>>>>>>> 1197bcd9c895547d26728c1001566b5b1e6eaa5a
 
 @Entity
 @Table
@@ -23,6 +27,7 @@ public class Customer {
     
     private String firstName;
     private String lastName;
+<<<<<<< HEAD
     @Column(unique = true)
     private String email;
     private String role;
@@ -50,6 +55,31 @@ public class Customer {
 	public Customer(Long customerId, String firstName, String lastName, String email, String phoneNumber,
 			LocalDate dateOfBirth, String licenseNumber, String username, String password, boolean loggedIn,
 			List<Booking> bookings, List<Address> addresses, List<Feedback> feedbacks) {
+=======
+    private String email;
+    private String phoneNumber;
+    private LocalDate dateOfBirth;
+    private String licenseNumber;
+    private String membershipStatus;
+    
+    @OneToMany(mappedBy = "customer")
+    private List<Booking> bookings;
+    
+    @OneToMany(mappedBy = "customer")
+    private List<Address> addresses;
+    
+    @OneToMany(mappedBy = "customer")
+    private List<Feedback> feedbacks;
+
+	public Customer() {
+		super();
+		// TODO Auto-generated constructor stub
+	}
+
+	public Customer(Long customerId, String firstName, String lastName, String email, String phoneNumber,
+			LocalDate dateOfBirth, String licenseNumber, String membershipStatus, List<Booking> bookings,
+			List<Address> addresses, List<Feedback> feedbacks) {
+>>>>>>> 1197bcd9c895547d26728c1001566b5b1e6eaa5a
 		super();
 		this.customerId = customerId;
 		this.firstName = firstName;
@@ -58,16 +88,23 @@ public class Customer {
 		this.phoneNumber = phoneNumber;
 		this.dateOfBirth = dateOfBirth;
 		this.licenseNumber = licenseNumber;
+<<<<<<< HEAD
 		this.username = username;
 		this.password = password;
 		this.loggedIn = loggedIn;
+=======
+		this.membershipStatus = membershipStatus;
+>>>>>>> 1197bcd9c895547d26728c1001566b5b1e6eaa5a
 		this.bookings = bookings;
 		this.addresses = addresses;
 		this.feedbacks = feedbacks;
 	}
 
+<<<<<<< HEAD
 
 
+=======
+>>>>>>> 1197bcd9c895547d26728c1001566b5b1e6eaa5a
 	public Long getCustomerId() {
 		return customerId;
 	}
@@ -99,6 +136,7 @@ public class Customer {
 	public void setEmail(String email) {
 		this.email = email;
 	}
+<<<<<<< HEAD
 	
 	public String getRole() {
 		return role;
@@ -107,6 +145,8 @@ public class Customer {
 	public void setRole(String role) {
 		this.role = role;
 	}
+=======
+>>>>>>> 1197bcd9c895547d26728c1001566b5b1e6eaa5a
 
 	public String getPhoneNumber() {
 		return phoneNumber;
@@ -132,6 +172,17 @@ public class Customer {
 		this.licenseNumber = licenseNumber;
 	}
 
+<<<<<<< HEAD
+=======
+	public String getMembershipStatus() {
+		return membershipStatus;
+	}
+
+	public void setMembershipStatus(String membershipStatus) {
+		this.membershipStatus = membershipStatus;
+	}
+
+>>>>>>> 1197bcd9c895547d26728c1001566b5b1e6eaa5a
 	public List<Booking> getBookings() {
 		return bookings;
 	}
@@ -155,6 +206,7 @@ public class Customer {
 	public void setFeedbacks(List<Feedback> feedbacks) {
 		this.feedbacks = feedbacks;
 	}
+<<<<<<< HEAD
 	
 	public String getUsername() {
         return username;
@@ -179,6 +231,8 @@ public class Customer {
     public void setLoggedIn(boolean loggedIn) {
         this.loggedIn = loggedIn;
     }
+=======
+>>>>>>> 1197bcd9c895547d26728c1001566b5b1e6eaa5a
     
 }
 

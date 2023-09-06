@@ -1,6 +1,7 @@
 package com.app.vehiclerent.entity;
 
 import java.time.LocalDate;
+<<<<<<< HEAD
 import java.util.ArrayList;
 import java.util.List;
 
@@ -13,6 +14,12 @@ import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.OneToMany;
 import jakarta.persistence.Table;
+=======
+import java.util.List;
+
+import jakarta.persistence.*;
+import jakarta.persistence.OneToMany;
+>>>>>>> 1197bcd9c895547d26728c1001566b5b1e6eaa5a
 
 @Entity
 @Table
@@ -21,7 +28,14 @@ public class Car {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long carId;
 
+<<<<<<< HEAD
 	private String model;
+=======
+	private String make;
+	private String model;
+	private int year;
+	private String color;
+>>>>>>> 1197bcd9c895547d26728c1001566b5b1e6eaa5a
 	private String licensePlate;
 	private double mileage;
 	private String fuelType;
@@ -30,6 +44,7 @@ public class Car {
 	private double dailyRentalRate;
 	private boolean available;
 	private LocalDate lastMaintenanceDate;
+<<<<<<< HEAD
 	private String carImageLink;
 
 	@OneToMany(mappedBy = "car", cascade = CascadeType.ALL)
@@ -38,6 +53,14 @@ public class Car {
 	
 	@OneToMany(mappedBy = "car", cascade = CascadeType.ALL, orphanRemoval = true)
     private List<CarImage> carImages = new ArrayList<>();
+=======
+
+	@OneToMany(mappedBy = "car")
+	private List<Booking> bookings;
+
+	@OneToMany(mappedBy = "car")
+	private List<CarFeature> features;
+>>>>>>> 1197bcd9c895547d26728c1001566b5b1e6eaa5a
 
 	public Car() {
 		super();
@@ -46,10 +69,20 @@ public class Car {
 
 	public Car(Long carId, String make, String model, int year, String color, String licensePlate, double mileage,
 			String fuelType, String transmissionType, int seatingCapacity, double dailyRentalRate, boolean available,
+<<<<<<< HEAD
 			LocalDate lastMaintenanceDate, List<Booking> bookings, String carImageLink) {
 		super();
 		this.carId = carId;
 		this.model = model;
+=======
+			LocalDate lastMaintenanceDate, List<Booking> bookings, List<CarFeature> features) {
+		super();
+		this.carId = carId;
+		this.make = make;
+		this.model = model;
+		this.year = year;
+		this.color = color;
+>>>>>>> 1197bcd9c895547d26728c1001566b5b1e6eaa5a
 		this.licensePlate = licensePlate;
 		this.mileage = mileage;
 		this.fuelType = fuelType;
@@ -59,7 +92,11 @@ public class Car {
 		this.available = available;
 		this.lastMaintenanceDate = lastMaintenanceDate;
 		this.bookings = bookings;
+<<<<<<< HEAD
 		this.carImageLink = carImageLink;
+=======
+		this.features = features;
+>>>>>>> 1197bcd9c895547d26728c1001566b5b1e6eaa5a
 	}
 
 	public Long getCarId() {
@@ -70,6 +107,17 @@ public class Car {
 		this.carId = carId;
 	}
 
+<<<<<<< HEAD
+=======
+	public String getMake() {
+		return make;
+	}
+
+	public void setMake(String make) {
+		this.make = make;
+	}
+
+>>>>>>> 1197bcd9c895547d26728c1001566b5b1e6eaa5a
 	public String getModel() {
 		return model;
 	}
@@ -78,6 +126,25 @@ public class Car {
 		this.model = model;
 	}
 
+<<<<<<< HEAD
+=======
+	public int getYear() {
+		return year;
+	}
+
+	public void setYear(int year) {
+		this.year = year;
+	}
+
+	public String getColor() {
+		return color;
+	}
+
+	public void setColor(String color) {
+		this.color = color;
+	}
+
+>>>>>>> 1197bcd9c895547d26728c1001566b5b1e6eaa5a
 	public String getLicensePlate() {
 		return licensePlate;
 	}
@@ -141,6 +208,7 @@ public class Car {
 	public void setLastMaintenanceDate(LocalDate lastMaintenanceDate) {
 		this.lastMaintenanceDate = lastMaintenanceDate;
 	}
+<<<<<<< HEAD
 	
 	public String getCarImageLink() {
 		return carImageLink;
@@ -157,6 +225,8 @@ public class Car {
 	public void setCarImages(List<CarImage> carImages) {
 		this.carImages = carImages;
 	}
+=======
+>>>>>>> 1197bcd9c895547d26728c1001566b5b1e6eaa5a
 
 	public List<Booking> getBookings() {
 		return bookings;
@@ -166,6 +236,7 @@ public class Car {
 		this.bookings = bookings;
 	}
 
+<<<<<<< HEAD
 	@Override
 	public String toString() {
 		return "Car [carId=" + carId + ", model=" + model + ", licensePlate=" + licensePlate + ", mileage=" + mileage
@@ -173,6 +244,23 @@ public class Car {
 				+ seatingCapacity + ", dailyRentalRate=" + dailyRentalRate + ", available=" + available
 				+ ", lastMaintenanceDate=" + lastMaintenanceDate + ", carImageLink=" + carImageLink + ", bookings="
 				+ bookings + ", carImages=" + carImages + "]";
+=======
+	public List<CarFeature> getFeatures() {
+		return features;
+	}
+
+	public void setFeatures(List<CarFeature> features) {
+		this.features = features;
+	}
+
+	@Override
+	public String toString() {
+		return "Car [carId=" + carId + ", make=" + make + ", model=" + model + ", year=" + year + ", color=" + color
+				+ ", licensePlate=" + licensePlate + ", mileage=" + mileage + ", fuelType=" + fuelType
+				+ ", transmissionType=" + transmissionType + ", seatingCapacity=" + seatingCapacity
+				+ ", dailyRentalRate=" + dailyRentalRate + ", available=" + available + ", lastMaintenanceDate="
+				+ lastMaintenanceDate + ", bookings=" + bookings + ", features=" + features + "]";
+>>>>>>> 1197bcd9c895547d26728c1001566b5b1e6eaa5a
 	}
 
 }

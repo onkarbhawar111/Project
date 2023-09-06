@@ -1,5 +1,6 @@
 package com.app.vehiclerent.serviceImpl;
 
+<<<<<<< HEAD
 import java.io.File;
 import java.io.FileOutputStream;
 import java.io.IOException;
@@ -15,6 +16,14 @@ import org.springframework.web.multipart.MultipartFile;
 import com.app.vehiclerent.entity.Car;
 import com.app.vehiclerent.entity.CarImage;
 import com.app.vehiclerent.repository.CarImageRepository;
+=======
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import com.app.vehiclerent.entity.Car;
+>>>>>>> 1197bcd9c895547d26728c1001566b5b1e6eaa5a
 import com.app.vehiclerent.repository.CarRepository;
 import com.app.vehiclerent.service.CarService;
 
@@ -23,9 +32,12 @@ public class CarServiceImpl implements CarService {
 
     @Autowired
     private CarRepository carRepository;
+<<<<<<< HEAD
     
     @Autowired
     private CarImageRepository carImageRepository;
+=======
+>>>>>>> 1197bcd9c895547d26728c1001566b5b1e6eaa5a
 
     @Override
     public List<Car> getAllCars() {
@@ -38,6 +50,7 @@ public class CarServiceImpl implements CarService {
     }
 
     @Override
+<<<<<<< HEAD
     public Car createCar(Car car) {
         return carRepository.save(car);
     }
@@ -49,10 +62,24 @@ public class CarServiceImpl implements CarService {
         }
         car.setCarId(id);
         return carRepository.save(car);
+=======
+    public Car createCar(Car Car) {
+        return carRepository.save(Car);
+    }
+
+    @Override
+    public Car updateCar(Long id, Car Car) {
+        if (!carRepository.existsById(id)) {
+            return null;
+        }
+        Car.setCarId(id);
+        return carRepository.save(Car);
+>>>>>>> 1197bcd9c895547d26728c1001566b5b1e6eaa5a
     }
 
     @Override
     public void deleteCar(Long id) {
+<<<<<<< HEAD
         carRepository.deleteById(id);
     }
 
@@ -128,3 +155,8 @@ public class CarServiceImpl implements CarService {
     }
 
 }
+=======
+    	carRepository.deleteById(id);
+    }
+}
+>>>>>>> 1197bcd9c895547d26728c1001566b5b1e6eaa5a
